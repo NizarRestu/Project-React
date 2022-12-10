@@ -11,6 +11,12 @@
       "password": "123",
       "role": "user",
       "id": 2
+    },
+    {
+      "username": "test@test",
+      "password": "123",
+      "role": "user",
+      "id": 3
     }
   ],
   "list": [

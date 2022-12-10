@@ -44,13 +44,13 @@ export default function Admin() {
   return (
     <div>
       <div>
-        <div className="mb-3 mt-[-10px]">
+        <div className="mb-3 ">
           <Nav />
         </div>
         <div>
-          <div className="overflow-x-auto mt-[50px] shadow-md sm:rounded-lg">
+          <div className=" mt-[70px]  sm:rounded-lg container">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-white uppercase bg-indigo-700 dark:bg-gray-700 dark:text-gray-400">
+              <thead className="text-xs text-white uppercase bg-indigo-700 dark:bg-gray-700 dark:text-gray-400 px-[10px]">
                 <tr>
                   <th scope="col" className="py-3 px-6 text-center">
                     No

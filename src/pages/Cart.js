@@ -73,30 +73,36 @@ export default function Cart() {
         <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-white uppercase bg-indigo-700 dark:bg-gray-700 dark:text-gray-400">
-              <tr>
-                <th scope="col" className="py-3 px-6 text-center">
-                  No
-                </th>
-                <th scope="col" className="py-3 px-6 text-center">
-                  Nama
-                </th>
-                <th scope="col" className="py-3 px-6 text-center">
-                  Image
-                </th>
-                <th scope="col" className="py-3 px-6 text-center">
-                  Harga
-                </th>
-                <th scope="col" className="py-3 px-6 text-center">
-                  Jumlah
-                </th>
-                {localStorage.getItem("role") !== null ? (
-                  <th scope="col" className="py-3 px-6 text-center">
-                    Aksi
-                  </th>
-                ) : (
-                  <></>
-                )}
-              </tr>
+              {cart.length !== 0 ? (
+                <>
+                  <tr>
+                    <th scope="col" className="py-3 px-6 text-center">
+                      No
+                    </th>
+                    <th scope="col" className="py-3 px-6 text-center">
+                      Nama
+                    </th>
+                    <th scope="col" className="py-3 px-6 text-center">
+                      Image
+                    </th>
+                    <th scope="col" className="py-3 px-6 text-center">
+                      Harga
+                    </th>
+                    <th scope="col" className="py-3 px-6 text-center">
+                      Jumlah
+                    </th>
+                    {localStorage.getItem("role") !== null ? (
+                      <th scope="col" className="py-3 px-6 text-center">
+                        Aksi
+                      </th>
+                    ) : (
+                      <></>
+                    )}
+                  </tr>
+                </>
+              ) : (
+                <></>
+              )}
             </thead>
             <tbody>
               {cart.length !== 0 ? (
@@ -130,17 +136,19 @@ export default function Cart() {
                         {localStorage.getItem("role") !== null ? (
                           <td className="py-4 text-center">
                             <Button
+                              onClick={() => {
+                                beli(cart.id);
+                              }}
+                              variant="success"
+                            >
+                              <i className="fa-solid fa-cart-plus"></i> Beli
+                            </Button>
+                            <Button
                               variant="danger"
                               className="mx-1"
                               onClick={() => deleteCarts(cart.id)}
                             >
                               <i class="fa-solid fa-trash"></i>
-                            </Button>
-                            <Button
-                              onClick={() => beli(cart.id)}
-                              variant="success"
-                            >
-                              <i className="fa-solid fa-cart-plus"></i> Beli
                             </Button>
                           </td>
                         ) : (
@@ -151,7 +159,7 @@ export default function Cart() {
                   })}
                 </>
               ) : (
-                <h4>Tidak ada</h4>
+                <h4 className="text-center">Tidak ada Pesanan</h4>
               )}
             </tbody>
           </table>

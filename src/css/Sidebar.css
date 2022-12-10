@@ -43,7 +43,7 @@ main{
     transition: all 0.5s;
 }
 .active{
-    background: rgb(36, 56, 70);
+    background: rgb(113, 185, 236);
     color: #000;
 }
 .icon, .link_text{

@@ -19,7 +19,7 @@ const Sidebar = ({ children }) => {
     history.push("/");
   };
   return (
-    <div className="fixed top-0 left-0 right-0  bg-gradient-to-r from-sky-500 to-indigo-500">
+    <div className="fixed top-0 left-0 right-0 bg-[]">
       <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
         <div className="top_section">
           <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
@@ -65,7 +65,7 @@ const Sidebar = ({ children }) => {
                 </li>
               </a>
 
-              <a className="no-underline" href="/login" onClick={logout}>
+              <a className="no-underline" href="/" onClick={logout}>
                 <li
                   className="link no-underline ml-[-25px]"
                   activeclassName="active"

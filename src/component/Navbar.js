@@ -3,10 +3,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import axios from "axios";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import Swal from "sweetalert2";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { useHistory } from "react-router-dom";
 
 export default function NavBar() {
@@ -149,6 +151,70 @@ export default function NavBar() {
           <Modal.Footer></Modal.Footer>
         </Form>
       </Modal>
+      <div>
+        {[false].map((expand) => (
+          <Navbar
+            fixed="top"
+            key={expand}
+            bg="dark"
+            variant="dark"
+            expand={expand}
+            className="mb-3"
+          >
+            <Container fluid>
+              <img
+                src="https://companieslogo.com/img/orig/GRAB-e42c2148.png?t=1643541585"
+                width={"30px"}
+                className="ml-[3%]"
+                alt=""
+              />
+              <Navbar.Brand href="/" className="ml-[-80%]">
+                Toko bar G
+              </Navbar.Brand>
+              <Navbar.Toggle
+                aria-controls={`offcanvasNavbar-expand-${expand}`}
+              />
+              <Navbar.Offcanvas
+                id={`offcanvasNavbar-expand-${expand}`}
+                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                placement="start"
+              >
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                    Toko bar G
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Nav className="justify-content-end flex-grow-1 pe-3">
+                    <Nav.Link href="/">Dasboard</Nav.Link>
+                    <Nav.Link href="/cart">Cart</Nav.Link>
+                    {localStorage.getItem("role") !== "admin" ? (
+                      <></>
+                    ) : (
+                      <>
+                        <Nav.Link href="" onClick={handleShow}>
+                          Tambah List
+                        </Nav.Link>
+                      </>
+                    )}
+                    {localStorage.getItem("role") !== null ? (
+                      <>
+                        <Nav.Link href="" onClick={logout}>
+                          Log out
+                        </Nav.Link>
+                      </>
+                    ) : (
+                      <>
+                        <Nav.Link href="/login">Login</Nav.Link>
+                      </>
+                    )}
+                  </Nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </Container>
+          </Navbar>
+        ))}
+      </div>
     </div>
   );
 }
