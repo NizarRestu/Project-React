@@ -74,7 +74,7 @@ export default function Cart() {
   return (
     <div className="">
       <div>
-        <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <div className="overflow-x-auto relative shadow-md sm:rounded-lg p-4">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-white uppercase bg-[#B37D1B] dark:bg-gray-700 dark:text-gray-400">
               {cart.length !== 0 ? (
