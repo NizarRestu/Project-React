@@ -114,8 +114,8 @@ export default function Dasboard() {
                   {localStorage.getItem("role") !== null ? (
                     <>
                       <Button
-                        className="w-32"
-                        variant="success"
+                        className="w-32 p-2"
+                        style={{backgroundColor:"#DA9924", border:"none"}}
                         onClick={() => buy(list)}
                       >
                         <i class="fa-solid fa-cart-plus"></i> Beli

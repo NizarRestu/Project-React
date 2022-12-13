@@ -35,8 +35,8 @@ export default function Login() {
     });
   };
   return (
-    <div className=" flex justify-center  text-left bg-gradient-to-r from-sky-500 to-indigo-500 w-full h-screen">
-      <div className="mt-[9%] w-full max-w-xs max-h-96 p-4 bg-white  border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div className=" flex justify-center text-left bg-gradient-to-r from-sky-500 to-indigo-500  h-screen">
+      <div className="mt-[9%] w-full max-w-xs max-h-96 p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form className="space-y-6" onSubmit={login} method="POST">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">
             Login

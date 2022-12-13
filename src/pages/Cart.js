@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import axios, { all } from "axios";
+import axios from "axios";
 import Swal from "sweetalert2";
 import Button from "react-bootstrap/Button";
 import { numberWithCommas } from "../component/number";
+import { useHistory } from "react-router-dom";
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
+  const history = useHistory();
+
 
   const totalBayar = cart.reduce(function (result, item) {
     return result + item.totalHarga;
@@ -21,6 +24,7 @@ export default function Cart() {
         alert("terjadi kesalahan" + error);
       });
   };
+
 
   const beli = async (id) => {
     Swal.fire({
@@ -72,7 +76,7 @@ export default function Cart() {
       <div>
         <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-white uppercase bg-indigo-700 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-white uppercase bg-[#B37D1B] dark:bg-gray-700 dark:text-gray-400">
               {cart.length !== 0 ? (
                 <>
                   <tr>
@@ -136,14 +140,6 @@ export default function Cart() {
                         {localStorage.getItem("role") !== null ? (
                           <td className="py-4 text-center">
                             <Button
-                              onClick={() => {
-                                beli(cart.id);
-                              }}
-                              variant="success"
-                            >
-                              <i className="fa-solid fa-cart-plus"></i> Beli
-                            </Button>
-                            <Button
                               variant="danger"
                               className="mx-1"
                               onClick={() => deleteCarts(cart.id)}
@@ -163,12 +159,15 @@ export default function Cart() {
               )}
             </tbody>
           </table>
-          <h4 className="fixed p-3">
+          <h4 className="text-left p-3">
             Total Harga : Rp. {numberWithCommas(totalBayar)}
           </h4>
-          <div className="fixed mt-[40px] p-3">
+          <div className="text-left p-3 mt-[-20px]">
+            <Button onClick={() => beli(cart.id)} variant="success">
+              <i className="fa-solid fa-cart-plus"></i> Checkout
+            </Button>
             <a href="/">
-              <Button className="w-32 ml-[20px]" variant="primary">
+              <Button className="w-32 ml-[20px]" style={{backgroundColor:"#DA9924", border:"none"}}>
                 <i className="fa-solid fa-right-from-bracket"></i> Kembali
               </Button>
             </a>

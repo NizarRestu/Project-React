@@ -56,5 +56,66 @@
       "id": 6
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "jumlah": 2,
+      "totalHarga": 40000,
+      "cart": {
+        "name": "Rendang",
+        "deskripsi": "Makanan khas Padang",
+        "harga": 20000,
+        "image": "https://images.tokopedia.net/img/JFrBQq/2022/8/9/bbeeca0f-bdd3-4b05-af82-8011730c932b.jpg",
+        "id": 6
+      },
+      "id": 2
+    },
+    {
+      "jumlah": 2,
+      "totalHarga": 24000,
+      "cart": {
+        "name": "Boba",
+        "deskripsi": "Minuman yang segar ",
+        "harga": 12000,
+        "image": "https://www.primarasa.co.id/images/images/taiwan-milk-tea-with-bubble_1339-100678.jpg",
+        "id": 4
+      },
+      "id": 3
+    },
+    {
+      "jumlah": 1,
+      "totalHarga": 5000,
+      "cart": {
+        "name": "Cilok",
+        "deskripsi": "Makanan yang cocok untuk cemilan",
+        "harga": 5000,
+        "image": "https://img.kurio.network/4KxPizCLRIHP5sYp4ZJXKp4-ZAY=/1200x1200/filters:quality(80)/https://kurio-img.kurioapps.com/22/04/05/c0741c32-6346-4329-bd8f-7f6600b84666.png",
+        "id": 3
+      },
+      "id": 4
+    },
+    {
+      "jumlah": 1,
+      "totalHarga": 10000,
+      "cart": {
+        "name": "Bakso",
+        "deskripsi": "Lebih enak ketika di nikmati waktu hujan",
+        "harga": 10000,
+        "image": "https://resepkoki.id/wp-content/uploads/2016/04/Resep-Bakso-urat.jpg",
+        "id": 2
+      },
+      "id": 5
+    },
+    {
+      "jumlah": 1,
+      "totalHarga": 10000,
+      "cart": {
+        "name": "Jus Alpukat",
+        "deskripsi": "Minuman yang menyehatkan",
+        "harga": 10000,
+        "image": "https://images.tokopedia.net/img/cache/500-square/product-1/2020/7/18/9149864/9149864_26c5205e-a37c-47eb-a393-0ca0d65455b6_719_719.jpg",
+        "id": 5
+      },
+      "id": 6
+    }
+  ]
 }
